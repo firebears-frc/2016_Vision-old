@@ -1,0 +1,301 @@
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c9a72/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c9a72.dir/build.make CMakeFiles/cmTC_c9a72.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c9a72.dir/TestEndianess.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_c9a72.dir/TestEndianess.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTC_c9a72
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9a72.dir/link.txt --verbose=1
+/usr/bin/cc     -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG    CMakeFiles/cmTC_c9a72.dir/TestEndianess.c.o  -o cmTC_c9a72 -rdynamic 
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the include file io.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_bbd2f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_bbd2f.dir/build.make CMakeFiles/cmTC_bbd2f.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bbd2f.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_bbd2f.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:16: fatal error: io.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_bbd2f.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_bbd2f.dir/CheckIncludeFile.c.o' failed
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+gmake[1]: *** [CMakeFiles/cmTC_bbd2f.dir/CheckIncludeFile.c.o] Error 1
+Makefile:126: recipe for target 'cmTC_bbd2f/fast' failed
+gmake: *** [cmTC_bbd2f/fast] Error 2
+
+
+Determining if the function jbg_newlen exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_47aaf/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_47aaf.dir/build.make CMakeFiles/cmTC_47aaf.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_47aaf.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=jbg_newlen -O3 -DNDEBUG   -o CMakeFiles/cmTC_47aaf.dir/CheckFunctionExists.c.o   -c /usr/share/cmake/Modules/CheckFunctionExists.c
+/usr/share/cmake/Modules/CheckFunctionExists.c:3:1: warning: function declaration isn’t a prototype [-Wstrict-prototypes]
+ char CHECK_FUNCTION_EXISTS();
+ ^
+Linking C executable cmTC_47aaf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47aaf.dir/link.txt --verbose=1
+/usr/bin/cc     -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=jbg_newlen -O3 -DNDEBUG    CMakeFiles/cmTC_47aaf.dir/CheckFunctionExists.c.o  -o cmTC_47aaf -rdynamic 
+CMakeFiles/cmTC_47aaf.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text.startup.main+0xe): undefined reference to `jbg_newlen'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_47aaf.dir/build.make:97: recipe for target 'cmTC_47aaf' failed
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+gmake[1]: *** [cmTC_47aaf] Error 1
+Makefile:126: recipe for target 'cmTC_47aaf/fast' failed
+gmake: *** [cmTC_47aaf/fast] Error 2
+
+
+Determining if the include file /usr/include/libpng/png.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_bde2a/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_bde2a.dir/build.make CMakeFiles/cmTC_bde2a.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bde2a.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_bde2a.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:37: fatal error: /usr/include/libpng/png.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_bde2a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_bde2a.dir/CheckIncludeFile.c.o' failed
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+gmake[1]: *** [CMakeFiles/cmTC_bde2a.dir/CheckIncludeFile.c.o] Error 1
+Makefile:126: recipe for target 'cmTC_bde2a/fast' failed
+gmake: *** [cmTC_bde2a/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c6f42/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c6f42.dir/build.make CMakeFiles/cmTC_c6f42.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c6f42.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_c6f42.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:28: fatal error: linux/videodev.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_c6f42.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c6f42.dir/CheckIncludeFile.c.o' failed
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+gmake[1]: *** [CMakeFiles/cmTC_c6f42.dir/CheckIncludeFile.c.o] Error 1
+Makefile:126: recipe for target 'cmTC_c6f42/fast' failed
+gmake: *** [cmTC_c6f42/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_1a41d/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_1a41d.dir/build.make CMakeFiles/cmTC_1a41d.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1a41d.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_1a41d.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:25: fatal error: sys/videoio.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_1a41d.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_1a41d.dir/CheckIncludeFile.c.o' failed
+gmake[1]: *** [CMakeFiles/cmTC_1a41d.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1a41d/fast' failed
+gmake: *** [cmTC_1a41d/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_3e069/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_3e069.dir/build.make CMakeFiles/cmTC_3e069.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3e069.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_3e069.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:34: fatal error: libavformat/avformat.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_3e069.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3e069.dir/CheckIncludeFile.c.o' failed
+gmake[1]: *** [CMakeFiles/cmTC_3e069.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3e069/fast' failed
+gmake: *** [cmTC_3e069/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_5d692/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_5d692.dir/build.make CMakeFiles/cmTC_5d692.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5d692.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_5d692.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:29: fatal error: ffmpeg/avformat.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_5d692.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_5d692.dir/CheckIncludeFile.c.o' failed
+gmake[1]: *** [CMakeFiles/cmTC_5d692.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_5d692/fast' failed
+gmake: *** [cmTC_5d692/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_8a4c2/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_8a4c2.dir/build.make CMakeFiles/cmTC_8a4c2.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8a4c2.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_8a4c2.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:28: fatal error: linux/videodev.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_8a4c2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_8a4c2.dir/CheckIncludeFile.c.o' failed
+gmake[1]: *** [CMakeFiles/cmTC_8a4c2.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8a4c2/fast' failed
+gmake: *** [cmTC_8a4c2/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_f2e15/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f2e15.dir/build.make CMakeFiles/cmTC_f2e15.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f2e15.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_f2e15.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:25: fatal error: sys/videoio.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_f2e15.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_f2e15.dir/CheckIncludeFile.c.o' failed
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+gmake[1]: *** [CMakeFiles/cmTC_f2e15.dir/CheckIncludeFile.c.o] Error 1
+Makefile:126: recipe for target 'cmTC_f2e15/fast' failed
+gmake: *** [cmTC_f2e15/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_94abb/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_94abb.dir/build.make CMakeFiles/cmTC_94abb.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_94abb.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_94abb.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:34: fatal error: libavformat/avformat.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_94abb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_94abb.dir/CheckIncludeFile.c.o' failed
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+gmake[1]: *** [CMakeFiles/cmTC_94abb.dir/CheckIncludeFile.c.o] Error 1
+Makefile:126: recipe for target 'cmTC_94abb/fast' failed
+gmake: *** [cmTC_94abb/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_c596e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_c596e.dir/build.make CMakeFiles/cmTC_c596e.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c596e.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_c596e.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:29: fatal error: ffmpeg/avformat.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_c596e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_c596e.dir/CheckIncludeFile.c.o' failed
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+gmake[1]: *** [CMakeFiles/cmTC_c596e.dir/CheckIncludeFile.c.o] Error 1
+Makefile:126: recipe for target 'cmTC_c596e/fast' failed
+gmake: *** [cmTC_c596e/fast] Error 2
+
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_eed9e/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_eed9e.dir/build.make CMakeFiles/cmTC_eed9e.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eed9e.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_eed9e.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:28: fatal error: linux/videodev.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_eed9e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_eed9e.dir/CheckIncludeFile.c.o' failed
+gmake[1]: *** [CMakeFiles/cmTC_eed9e.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_eed9e/fast' failed
+gmake: *** [cmTC_eed9e/fast] Error 2
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_9a26a/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_9a26a.dir/build.make CMakeFiles/cmTC_9a26a.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9a26a.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_9a26a.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:25: fatal error: sys/videoio.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_9a26a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9a26a.dir/CheckIncludeFile.c.o' failed
+gmake[1]: *** [CMakeFiles/cmTC_9a26a.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9a26a/fast' failed
+gmake: *** [cmTC_9a26a/fast] Error 2
+
+
+Determining if the include file libavformat/avformat.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_a7890/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_a7890.dir/build.make CMakeFiles/cmTC_a7890.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a7890.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_a7890.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:34: fatal error: libavformat/avformat.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_a7890.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a7890.dir/CheckIncludeFile.c.o' failed
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+gmake[1]: *** [CMakeFiles/cmTC_a7890.dir/CheckIncludeFile.c.o] Error 1
+Makefile:126: recipe for target 'cmTC_a7890/fast' failed
+gmake: *** [cmTC_a7890/fast] Error 2
+
+
+Determining if the include file ffmpeg/avformat.h exists failed with the following output:
+Change Dir: /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_4a748/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_4a748.dir/build.make CMakeFiles/cmTC_4a748.dir/build
+gmake[1]: Entering directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4a748.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wno-narrowing -fdiagnostics-show-option -Wno-long-long -pthread -fomit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -ffunction-sections -fvisibility=hidden  -O3 -DNDEBUG   -o CMakeFiles/cmTC_4a748.dir/CheckIncludeFile.c.o   -c /home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:29: fatal error: ffmpeg/avformat.h: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_4a748.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_4a748.dir/CheckIncludeFile.c.o' failed
+gmake[1]: *** [CMakeFiles/cmTC_4a748.dir/CheckIncludeFile.c.o] Error 1
+gmake[1]: Leaving directory '/home/jeron/prg/examples/opencv_with_jll/deps/opencv-3.0.0/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_4a748/fast' failed
+gmake: *** [cmTC_4a748/fast] Error 2
+
+

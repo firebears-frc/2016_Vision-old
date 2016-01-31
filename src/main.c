@@ -1,6 +1,18 @@
 #include "header/main.h"
 
 int oldtbiu = 0;
+int shape[] = {
+	1, 0, 0, 0, 1,
+	1, 0, 0, 0, 1,
+	1, 0, 0, 0, 1,
+	1, 0, 0, 0, 1,
+	1, 1, 1, 1, 1
+/*	0, 1, 1, 1, 0,
+	0, 1, 1, 1, 0,
+	0, 1, 1, 1, 0,
+	0, 1, 1, 1, 0,
+	0, 0, 0, 0, 0*/
+};
 
 void memtesterer(jl_t* jlc, str_t name) {
 	int diff = jl_me_tbiu() - oldtbiu;
@@ -14,7 +26,8 @@ static void ex_redraw(jl_t* jlc) {
 	jl_gr_draw_vo(jlc, &(ctx->vos[0]), NULL);
 	jl_gr_draw_int(jlc, ctx->circle.x,
 		(jl_vec3_t) { 0., 0., 0. },
-		(jl_font_t) { 0, JL_IMGI_ICON, 0, jlc->fontcolor, .0625f });
+		(jl_font_t) { 0, JL_IMGI_ICON, 0,
+			(uint8_t []) { 255, 255 ,255, 255}, .0625f });
 	jl_gr_draw_int(jlc, ctx->circle.y,
 		(jl_vec3_t) { .5, 0., 0. },
 		(jl_font_t) { 0, JL_IMGI_ICON, 0, jlc->fontcolor, .0625f });
@@ -28,26 +41,35 @@ void ex_loop(jl_t* jlc) {
 	ctx_t* ctx = jlc->uctx;
 	double ar;
 	int i;
-	jl_rect_t circles[10];
+	jl_cv_line_t lines[10];
+	uint8_t bounds[] = {20, 200, 90, 40, 255, 180};
 
 	memtesterer(jlc, "run loop");
 	jl_ct_run_event(jlc,
 		JL_CT_ALLP(JL_CT_GAME_STRT, JL_CT_COMP_MENU, JL_CT_ANDR_MENU),
 		ex_down, jl_dont);
 	memtesterer(jlc, "run ev");
-	jl_cv_loop_webcam(ctx->jl_cv);
+//	jl_cv_loop_webcam(ctx->jl_cv);
+	jl_cv_loop_image(ctx->jl_cv, "Field_Images/0.jpg");
 	memtesterer(jlc, "run cam");
-	ctx->circle.x = jl_cv_loop_detect_circle(ctx->jl_cv, 10, circles);
-	for(i = 0; i < ctx->circle.x; i++) {
-		jl_cv_draw_circle(ctx->jl_cv, circles[i]);
-	}
-//	jl_cv_loop_filter(ctx->jl_cv, (uint8_t[]) {0, 100, 100, 100, 255, 255});
+// Filter colors
+	jl_cv_loop_filter(ctx->jl_cv, bounds);
 	memtesterer(jlc, "run filter");
+// Erode Blobs
+	jl_cv_struct_erode(ctx->jl_cv, 5, 5, shape);
+	memtesterer(jlc, "erode");
+// Line Detect
+	ctx->circle.x = jl_cv_loop_detect_lines(ctx->jl_cv, 10, 120, 10, lines);
+	for(i = 0; i < ctx->circle.x; i++) {
+		jl_cv_draw_line(ctx->jl_cv, lines[i]);
+	}
+	memtesterer(jlc, "detect & draw");
 	ar = jl_cv_loop_maketx(ctx->jl_cv);
 	memtesterer(jlc, "run mktex");
-	jl_gr_vos_image(jlc, &(ctx->vos[0]),
-		(jl_rect_t) { 0.f, 0.f, 1.f, ar }, 1, 0, 0, 255);
-	memtesterer(jlc, "vos image");
+	jl_gr_vos_texture(jlc, &(ctx->vos[0]),
+		(jl_rect_t) { 0.f, 0.f, 1.f, ar }, &(ctx->jl_cv->textures[0]),
+		0, 255);
+	memtesterer(jlc, "vos tex");
 }
 
 void ex_wdns(jl_t* jlc) {
@@ -101,7 +123,8 @@ static inline void ex_init_vos(jl_t* jlc) {
 static inline void ex_init_cv(jl_t* jlc) {
 	ctx_t* ctx = jlc->uctx;
 
-	jl_cv_init_webcam(ctx->jl_cv);
+//	jl_cv_init_webcam(ctx->jl_cv, JL_CV_ORIG);
+	jl_cv_init_image(ctx->jl_cv, JL_CV_CHNG, "Field_Images/0.jpg");
 }
 
 void hack_user_init(jl_t* jlc) {
